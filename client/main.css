@@ -1,4 +1,7 @@
-body {
-  padding: 10px;
-  font-family: sans-serif;
+.bcgBlack {
+  background-color: #d05c62;
+}
+
+.bcgGreen {
+  background-color: #f3671f;
 }

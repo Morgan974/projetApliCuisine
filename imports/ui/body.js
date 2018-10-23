@@ -1,0 +1,5 @@
+import './body.html'
+import './navbar.js'
+import './jumbotron.js'
+import './atelier.js'
+import './formulaire.js'
