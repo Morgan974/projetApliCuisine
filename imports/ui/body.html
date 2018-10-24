@@ -4,12 +4,49 @@
 
         <div class="row">
             <div class="col-md-3 bcgBlack">
-                {{> formulaire}}
+                <div class="container text-center">
+                    {{> formulaire}}
+                </div>
             </div>
             <div class="col-md-9 bcgGreen">
-                {{#each Ateliers}}
-                    {{> atelier}}
-                {{/each}}
+                <div class="main">
+                    {{#each Ateliers}}
+                        {{> atelier}}
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal : mode édition -->
+        <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="ModalLabel">Edition de l'Ateliers</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <!-- création d'un formulaire d'édition -->
+                    <form class="edition-atelier">
+                        <div class="modal-body">
+                            <input type="text" name="edtTitre" id="edt-titre" />
+                            <input type="text" name="edtDescription" id="edt-description" />
+                            <input type="text" name="edtDate" id="edt-date" />
+                            <input type="text" name="edtHoraire" id="edt-horaire" />
+                            <input type="text" name="edtDuree" id="edt-duree" />
+                            <input type="text" name="edtPrix" id="edt-prix" />
+                            <input type="text" name="edtImage" id="edt-image" />
+                            <input type="text" name="edtNbrDispo" id="edt-nbrDispo" />
+                            <input type="hidden" name="edtId" id="edt-id">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                            <button type="submit" class="btn btn-primary">Sauvegarder</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     

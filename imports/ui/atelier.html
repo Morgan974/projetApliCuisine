@@ -1,14 +1,24 @@
 <template name="atelier">
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 19rem;">
         <img class="card-img-top" src="{{image}}" alt="Card image cap">
-        <div class="card-body">
+        <div class="card-header">
             <h5 class="card-title">{{titre}} - {{prix}}</h5>
+        </div>
+        <div class="card-body">
             <p class="card-text">{{date}} - {{horaire}} - {{duree}}</p>
             <p class="card-text">{{description}}</p>
+        </div>
+        <div class="card-body">
             <p class="card-text"> 0 / {{nbrDispo}}</p>
+        </div>
+        <div class="card-footer text-center">
             <a href="#" class="btn btn-primary">Rerserver ! </a>
-
             <button class='delete btn'>&times;</button>
+
+            <!-- bouton d'activation du Modal + ajout data-id="{{_id}}" -->
+            <button type="button" class="btn-edit btn btn-primary" data-toggle="modal" data-target="#Modal" data-id="{{_id}}">Editer</button>
+            
+            <h6 class="card-subtitle text-muted">- par cuistot</h6>
         </div>
     </div>
 </template>

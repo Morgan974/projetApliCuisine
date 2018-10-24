@@ -1,7 +1,29 @@
 .bcgBlack {
   background-color: #d05c62;
+  padding: 50px;
 }
 
 .bcgGreen {
   background-color: #f3671f;
+}
+.btn-formulaire {
+  width: 100%;
+}
+.card {
+  margin: 2px;
+}
+.main{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+.card-footer {
+  width: 100%;
+}
+.card-footer .btn {
+  width: 100px;
+}
+
+.card-subtitle{
+  margin-top: 10px;
 }
