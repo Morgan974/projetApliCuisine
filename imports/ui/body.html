@@ -7,7 +7,9 @@
                 {{> formulaire}}
             </div>
             <div class="col-md-9 bcgGreen">
-                {{> atelier}}
+                {{#each Ateliers}}
+                    {{> atelier}}
+                {{/each}}
             </div>
         </div>
     
