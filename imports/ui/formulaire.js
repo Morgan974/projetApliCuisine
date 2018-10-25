@@ -27,6 +27,8 @@ Template.formulaire.events({
             image,
             nbrDispo,
             createdAt: new Date(),
+            owner: Meteor.userId(),
+            username: Meteor.user().username,
         });
 
         target.titre.value = '';
