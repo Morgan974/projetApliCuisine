@@ -2,14 +2,31 @@
     <div class="card" style="width: 19rem;">
         <img class="card-img-top" src="{{image}}" alt="Card image cap">
         <div class="card-header">
-            <h5 class="card-title">{{titre}} - {{prix}}</h5>
+            <h5 class="card-title text-center">{{titre}}<hr>{{prix}}</h5>
         </div>
-        <div class="card-body">
-            <p class="card-text">{{date}} - {{horaire}} - {{duree}}</p>
-            <p class="card-text">{{description}}</p>
+        <div class="card-body card-Info">
+            <p class="card-text">Le {{date}} à {{horaire}}</p>
+            <p>Durée : {{duree}}</p>
+            <hr>
+            <div class="accordion" id="accordion">
+                <div id="heading">
+                    <h5 class="mb-0 text-center">
+                        <button class="btn-collapse btn btn-secondary" type="button" data-toggle="collapse" data-target="#{{_id}}" aria-expanded="false"
+                            aria-controls="collapse" data-id="{{_id}}">
+                            Planning
+                        </button>
+                    </h5>
+                </div>
+                <div id="{{_id}}" class="collapse" aria-labelledby="heading">
+                    <div>
+                        <p class="card-text">{{description}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="card-body">
-            <p class="card-text"> 0 / {{nbrDispo}}</p>
+        <hr>
+        <div class="card-body card-nbrDispo">
+            <p class="card-text text-center"> Il reste {{nbrDispo}} places</p>
         </div>
         <div class="card-footer text-center">
             <div class="row">
@@ -20,11 +37,13 @@
                 </div>
             </div>
             <div class="col">
-                <!-- bouton d'activation du Modal + ajout data-id="{{_id}}" -->
-                <button type="button" class="btn-edit btn btn-primary" data-toggle="modal" data-target="#Modal" data-id="{{_id}}">Editer</button>
-                <button class='delete btn'>&times;</button>
             </div>          
-            <h6 class="card-subtitle text-muted">- par {{username}}</h6>
+            <h6 class="card-subtitle text-muted">- par le Chef {{username}}</h6>
+        </div>
+        <div class="card-color text-center">
+            <!-- bouton d'activation du Modal + ajout data-id="{{_id}}" -->
+            <button type="button" class="btn-edit btn" data-toggle="modal" data-target="#Modal" data-id="{{_id}}">Editer</button>
+            <button class='delete btn'>Effacer</button>
         </div>
     </div>
 </template>

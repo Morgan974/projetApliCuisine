@@ -39,4 +39,8 @@ Template.atelier.events({
         modalNbrDispo.value = atelier.nbrDispo;
         modalId.value = idAtelier;
     },
+    'click .btn-collapse'(event) {
+        const target = event.target;
+        const idCollapse = target.getAttribute("data-id");
+    },
 });

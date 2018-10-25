@@ -1,3 +1,7 @@
+.body {
+  background-color: #f3671f;
+}
+
 .bcgBlack {
   background-color: #d05c62;
   padding: 50px;
@@ -5,18 +9,38 @@
 
 .bcgGreen {
   background-color: #f3671f;
+  padding-top: 25px;
 }
-.btn-formulaire {
-  width: 100%;
-}
-.card {
-  margin: 2px;
-}
-.main{
+.nouvelle-atelier {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
+.nouvelle-atelier .row{
+  margin-top: 10px;
+}
+
+.nouvelle-atelier input{
+  width: 100%;
+}
+
+.btn-formulaire {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+
+}
+.card {
+  margin: 2px;
+}
+.main {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+}
+
 .card-footer {
   width: 100%;
 }
@@ -25,4 +49,48 @@
 }
 .mbotom{
   margin-bottom: 5px;
+}
+
+.jumbotron {
+  background-color: #d05c62;
+  padding-top: 100px;
+  margin-bottom: 0;
+}
+
+.card-footer button {
+  width: 200px;
+}
+.delete {
+  font-weight: bold;
+  background: none;
+  font-size: 1em;
+  border: none;
+  color: white;
+  width: 100%;
+}
+.card-color {
+  background-color: darkslategrey;
+}
+
+.card-color :hover {
+  background-color: black;
+}
+.btn-edit {
+  font-weight: bold;
+  background: none;
+  font-size: 1em;
+  border: none;
+  color: white;
+  width: 100%;
+}
+
+.collapse {
+  margin-top: 10px;
+}
+.btn-collapse{
+  width: 100%;
+}
+
+.card-nbrDispo {
+  max-height: 50px;
 }

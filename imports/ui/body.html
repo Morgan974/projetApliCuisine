@@ -1,14 +1,13 @@
 <body>
     {{> navbar}}
     {{> jumbotron}}
-
         <div class="row">
             <div class="col-md-3 bcgBlack">
                 <div class="container text-center">
                     {{> formulaire}}
                 </div>
             </div>
-            <div class="col-md-9 bcgGreen">
+            <div class="col bcgGreen">
                 <div class="main">
                     {{#each Ateliers}}
                         {{> atelier}}
