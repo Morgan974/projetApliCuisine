@@ -1,6 +1,7 @@
 import './atelier.html'
 import { Template } from 'meteor/templating';
-import { Collection } from '../api/Collection';
+import { Collection } from '../api/Collection.js';
+import { Reservation } from '../api/Collection.js';
 
 Template.atelier.events({
     'click .delete'() {
@@ -42,5 +43,23 @@ Template.atelier.events({
     'click .btn-collapse'(event) {
         const target = event.target;
         const idCollapse = target.getAttribute("data-id");
+    },
+
+    'click .btn-contact'(event) {
+        const target = event.target;
+        const idContact = target.getAttribute("data-id");
+
+        console.log(idContact);
+
+        const Atelier = Collection.findOne({ _id: idContact });
+
+        console.log(Atelier);
+        const contactTitre = document.querySelector('#contact-titre');
+        const infoTitre = Atelier.titre;
+
+        contactTitre.value = infoTitre;
+
+        console.log(contactTitre);
+        console.log(infoTitre);
     },
 });

@@ -3,13 +3,18 @@ import './navbar.js'
 import './jumbotron.js'
 import './atelier.js'
 import './formulaire.js'
+import './reservation.html'
 
 import { Template } from 'meteor/templating';
 import { Collection } from '../api/Collection.js';
+import { Reservation } from '../api/Collection.js';
 
 Template.body.helpers({
     Ateliers() {
         return Collection.find({});
+    },
+    Places() {
+        return Reservation.find({});
     },
 });
 
@@ -45,5 +50,34 @@ Template.body.events({
         });
 
         $('#Modal').modal('hide')
+    },
+
+    'submit .reservation'(event) {
+        event.preventDefault();
+
+        const target = event.target;
+
+        console.log(target);
+
+        const Nom = target.contactNom.value;
+        const Prenom = target.contactPrenom.value;
+        const NumTel = target.contactNumTel.value;
+        const Mail = target.contactMail.value;
+
+        Reservation.insert ({
+            Nom,
+            Prenom,
+            NumTel,
+            Mail,
+            createdAt: new Date(),
+        });
+
+        target.contactNom.value = '';
+        target.contactPrenom.value = '';
+        target.contactNumTel.value = '';
+        target.contactMail.value = '';
+    },
+    'click .deleteInscription'() {
+        Reservation.remove(this._id);
     },
 });

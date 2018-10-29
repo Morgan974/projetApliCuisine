@@ -2,7 +2,7 @@
     <div class="card" style="width: 19rem;">
         <img class="card-img-top" src="{{image}}" alt="Card image cap">
         <div class="card-header">
-            <h5 class="card-title text-center">{{titre}}<hr>{{prix}}</h5>
+            <h5 class="card-title text-center">{{titre}}<hr>{{prix}} € </h5>
         </div>
         <div class="card-body card-Info">
             <p class="card-text">Le {{date}} à {{horaire}}</p>
@@ -31,9 +31,10 @@
         <div class="card-footer text-center">
             <div class="row">
                 <div class="col mbotom">
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactModal">
+                    <button type="button" class="btn-contact btn btn-primary" data-toggle="modal" data-target="#contactModal" data-id="{{_id}}">
                         Rerserver !
                     </button>
+                    <input type="hidden" id="contact-id">
                 </div>
             </div>
             <div class="col">
