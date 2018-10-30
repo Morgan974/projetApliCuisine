@@ -56,15 +56,20 @@ Template.body.events({
         event.preventDefault();
 
         const target = event.target;
+        
+        const idContact = target.getAttribute("data-id");
+        const Atelier = Collection.findOne({ _id: idContact });
 
-        console.log(target);
+        console.log(Atelier);
 
+        const Titre = target.contactTitre.value;
         const Nom = target.contactNom.value;
         const Prenom = target.contactPrenom.value;
         const NumTel = target.contactNumTel.value;
         const Mail = target.contactMail.value;
 
         Reservation.insert ({
+            Titre,
             Nom,
             Prenom,
             NumTel,
@@ -72,11 +77,13 @@ Template.body.events({
             createdAt: new Date(),
         });
 
+        target.contactTitre.value ='';
         target.contactNom.value = '';
         target.contactPrenom.value = '';
         target.contactNumTel.value = '';
         target.contactMail.value = '';
     },
+
     'click .deleteInscription'() {
         Reservation.remove(this._id);
     },

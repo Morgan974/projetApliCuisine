@@ -47,19 +47,15 @@ Template.atelier.events({
 
     'click .btn-contact'(event) {
         const target = event.target;
-        const idContact = target.getAttribute("data-id");
 
-        console.log(idContact);
+        const idAtelier = target.getAttribute("data-id");
 
-        const Atelier = Collection.findOne({ _id: idContact });
+        const atelier = Collection.findOne({ _id: idAtelier });
+        console.log(atelier);
 
-        console.log(Atelier);
         const contactTitre = document.querySelector('#contact-titre');
-        const infoTitre = Atelier.titre;
-
-        contactTitre.value = infoTitre;
 
         console.log(contactTitre);
-        console.log(infoTitre);
+        contactTitre.value = atelier.titre;
     },
 });

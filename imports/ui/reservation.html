@@ -1,12 +1,11 @@
 <template name="reservation">
-    <div class="row">
-        <div class="col">
-            Reservattion pour le {{titre}}<br>
-            Nom : {{Nom}}
-            Penom : {{Prenom}}
-            Numéro de Tel : {{NumTel}}
-            E-Mail : {{Mail}}
+    <div class="card">
+        <div class="card-body">
+            Reservattion pour l'Atelier : {{Titre}}
+            <br>{{Nom}}, {{Prenom}}
+            <br>Numéro de Tel : {{NumTel}}, E-Mail : {{Mail}}
+            <hr>
             <button class='deleteInscription btn'>Effacer</button>
         </div>
-    </div>    
+    </div>
 </template>

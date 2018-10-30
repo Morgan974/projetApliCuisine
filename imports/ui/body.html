@@ -3,9 +3,17 @@
     {{> jumbotron}}
         <div class="row">
             <div class="col-md-3 bcgBlack">
-                <div class="container text-center">
-                    {{> formulaire}}
+                <div class="row">
+                    <div class="container text-center">
+                        {{> formulaire}}
+                    </div>
                 </div>
+                <hr>
+                <div class="row">
+                    {{#each Places}}
+                    {{> reservation}}
+                    {{/each}}
+                </div>                
             </div>
             <div class="col bcgGreen">
                 <div class="main">
@@ -13,11 +21,6 @@
                         {{> atelier}}
                     {{/each}}
                 </div>
-            </div>
-            <div class="col">
-                {{#each Places}}
-                    {{> reservation}}
-                {{/each}}
             </div>
         </div>
 
@@ -66,7 +69,7 @@
                     </div>
                     <form class="reservation">
                         <div class="modal-body">
-                            <span class="contact-id"></span>
+                            <input type="hidden" class="titre" name="contactTitre" id="contact-titre" />
                             <input type="text" name="contactNom" id="contact-nom" placeholder="Nom" />
                             <input type="text" name="contactPrenom" id="contact-prenom" placeholder="Prenom" />
                             <input type="text" name="contactNumTel" id="contact-numTel" placeholder="Numéro de Télèphone" />
