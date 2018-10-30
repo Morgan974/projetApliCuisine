@@ -55,11 +55,13 @@ Template.atelier.events({
         const target = event.target;
 
         const idAtelier = target.getAttribute("data-id");
-
         const atelier = Collection.findOne({ _id: idAtelier });
 
+        const contactAtelier = document.querySelector('#contact-de-id');
         const contactTitre = document.querySelector('#contact-titre');
         const contactPlaceMax = document.querySelector('#contact-placeMax')
+
+        contactAtelier.value = atelier._id;
 
         contactTitre.value = atelier.titre;
         contactPlaceMax.value = atelier.nbrDispo;

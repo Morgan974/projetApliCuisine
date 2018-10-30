@@ -79,15 +79,14 @@ Template.body.events({
         event.preventDefault();
 
         const target = event.target;
-        
-        const idContact = target.getAttribute("data-id");
-        const Atelier = Collection.findOne({ _id: idContact });
 
         const Titre = target.contactTitre.value;
         const Nom = target.contactNom.value;
         const Prenom = target.contactPrenom.value;
         const NumTel = target.contactNumTel.value;
         const Mail = target.contactMail.value;
+        const ID = target.contactDeId.value;
+        console.log(ID);
 
         Reservation.insert ({
             Titre,
@@ -108,4 +107,7 @@ Template.body.events({
     'click .deleteInscription'() {
         Reservation.remove(this._id);
     },
-});
+
+    
+    });
+    

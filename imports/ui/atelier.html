@@ -41,11 +41,13 @@
             </div>          
             <h6 class="card-subtitle text-muted">- par le Chef {{username}}</h6>
         </div>
+        {{#if currentUser}}
         <div class="card-color text-center">
             <!-- bouton d'activation du Modal + ajout data-id="{{_id}}" -->
             <button type="button" class="btn-edit btn" data-toggle="modal" data-target="#Modal" data-id="{{_id}}">Editer</button>
             <button class='delete btn'>Effacer</button>
             <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
         </div>
+        {{/if}}
     </div>
 </template>

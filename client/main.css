@@ -96,15 +96,6 @@
 }
 
 div.checked {
-
   color: #888;
-
-}
-
- 
-
-div.checked .text {
-
   text-decoration: line-through;
-
 }

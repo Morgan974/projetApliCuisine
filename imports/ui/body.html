@@ -2,7 +2,8 @@
     {{> navbar}}
     {{> jumbotron}}
         <div class="row">
-            <div class="col-md-3 bcgBlack">
+            {{#if currentUser}}
+            <div class="col-md-3 bcgBlack">                
                 <div class="row">
                     <div class="container text-center">
                         {{> formulaire}}
@@ -15,6 +16,7 @@
                     {{/each}}
                 </div>                
             </div>
+            {{/if}}
             <div class="col bcgGreen">
                 <div class="main">
                     {{#each Ateliers}}
@@ -69,13 +71,15 @@
                     </div>
                     <form class="reservation">
                         <div class="modal-body">                            
-                            <input type="hidden" class="titre" name="contactTitre" id="contact-titre" />
-                            <input type="hidden" class="titre" name="contactPlaceMax" id="contact-placeMax" />
+                            <input type="text" class="titre" name="contactTitre" id="contact-titre" />
+                            <input type="text" class="titre" name="contactPlaceMax" id="contact-placeMax" />
+                            <input type="text" class="titre" name="contactDeId" id="contact-de-id" />
+
                             <input type="text" name="contactNom" id="contact-nom" placeholder="Nom" />
                             <input type="text" name="contactPrenom" id="contact-prenom" placeholder="Prenom" />
                             <input type="text" name="contactNumTel" id="contact-numTel" placeholder="Numéro de Télèphone" />
                             <input type="text" name="contactMail" id="contact-mail" placeholder="E-Mail" />
-                            <input type="hidden" name="contactId" id="contact-id">
+                            
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
