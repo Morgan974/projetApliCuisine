@@ -8,6 +8,29 @@ import './reservation.html'
 import { Template } from 'meteor/templating';
 import { Collection } from '../api/Collection.js';
 import { Reservation } from '../api/Collection.js';
+import { ReactiveVar } from 'meteor/reactive-var';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Template.body.helpers({
     Ateliers() {
@@ -59,8 +82,6 @@ Template.body.events({
         
         const idContact = target.getAttribute("data-id");
         const Atelier = Collection.findOne({ _id: idContact });
-
-        console.log(Atelier);
 
         const Titre = target.contactTitre.value;
         const Nom = target.contactNom.value;

@@ -1,5 +1,5 @@
 <template name="atelier">
-    <div class="card" style="width: 19rem;">
+    <div class="card {{#if checked}}checked{{/if}}" style="width: 19rem;">
         <img class="card-img-top" src="{{image}}" alt="Card image cap">
         <div class="card-header">
             <h5 class="card-title text-center">{{titre}}<hr>{{prix}} € </h5>
@@ -26,7 +26,7 @@
         </div>
         <hr>
         <div class="card-body card-nbrDispo">
-            <p class="card-text text-center"> Il reste {{nbrDispo}} places</p>
+            <p class="card-text text-center">  place  reserver : {{counter}} / {{nbrDispo}}</p>
         </div>
         <div class="card-footer text-center">
             <div class="row">
@@ -45,6 +45,7 @@
             <!-- bouton d'activation du Modal + ajout data-id="{{_id}}" -->
             <button type="button" class="btn-edit btn" data-toggle="modal" data-target="#Modal" data-id="{{_id}}">Editer</button>
             <button class='delete btn'>Effacer</button>
+            <input type="checkbox" checked="{{checked}}" class="toggle-checked" />
         </div>
     </div>
 </template>

@@ -4,6 +4,12 @@ import { Collection } from '../api/Collection.js';
 import { Reservation } from '../api/Collection.js';
 
 Template.atelier.events({
+    'click .toggle-checked'() {
+        Collection.update(this._id, {
+            $set: { checked: !this.checked },
+        });
+    },
+
     'click .delete'() {
         Collection.remove(this._id);
     },
@@ -51,11 +57,37 @@ Template.atelier.events({
         const idAtelier = target.getAttribute("data-id");
 
         const atelier = Collection.findOne({ _id: idAtelier });
-        console.log(atelier);
 
         const contactTitre = document.querySelector('#contact-titre');
+        const contactPlaceMax = document.querySelector('#contact-placeMax')
 
-        console.log(contactTitre);
         contactTitre.value = atelier.titre;
+        contactPlaceMax.value = atelier.nbrDispo;
+    },
+});
+
+// Test
+
+Template.atelier.onCreated(function decrementation() {
+    this.counter = new ReactiveVar(0);
+});
+
+Template.atelier.helpers({
+    counter() {
+        return Template.instance().counter.get();
+    },
+});
+
+Template.atelier.events({
+    'click .btn-clicker'(event, instance) {
+        const target = event.target;
+
+        console.log("cilbe : " + target);
+
+        instance.counter.set(instance.counter.get() + 1);
+
+        const counter = instance.counter.get();
+
+        console.log("conteur ctuelle : " + counter);
     },
 });
