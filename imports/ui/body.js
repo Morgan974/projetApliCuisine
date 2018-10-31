@@ -81,12 +81,21 @@ Template.body.events({
         const target = event.target;
 
         const Titre = target.contactTitre.value;
+        const ID = target.contactDeId.value;
+
         const Nom = target.contactNom.value;
         const Prenom = target.contactPrenom.value;
         const NumTel = target.contactNumTel.value;
         const Mail = target.contactMail.value;
-        const ID = target.contactDeId.value;
-        console.log(ID);
+
+        let CurrentNbr;
+        let CurrentMax = target.contactPlaceMax.value;
+
+        console.log(CurrentMax);
+
+        CurrentNbr = CurrentNbr + 1;
+
+        console.log(CurrentNbr);
 
         Reservation.insert ({
             Titre,
@@ -97,7 +106,15 @@ Template.body.events({
             createdAt: new Date(),
         });
 
+        Collection.update(ID, {
+            $set: {
+                nbrMax: CurrentNbr,
+            },
+        });
+
         target.contactTitre.value ='';
+        target.contactPlace.value = '';
+        target.contactDeId.value = '';
         target.contactNom.value = '';
         target.contactPrenom.value = '';
         target.contactNumTel.value = '';

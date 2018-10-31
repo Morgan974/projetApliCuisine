@@ -17,6 +17,11 @@ Template.formulaire.events({
         const image = target.image.value;
         const nbrDispo = target.nbrDispo.value;
 
+        target.place.value = 0;
+        const place = target.place.value;
+
+        console.log(place);
+
         Collection.insert ({
             titre,
             description,
@@ -26,6 +31,7 @@ Template.formulaire.events({
             prix,
             image,
             nbrDispo,
+            place,
             createdAt: new Date(),
             owner: Meteor.userId(),
             username: Meteor.user().username,

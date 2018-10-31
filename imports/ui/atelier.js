@@ -59,37 +59,39 @@ Template.atelier.events({
 
         const contactAtelier = document.querySelector('#contact-de-id');
         const contactTitre = document.querySelector('#contact-titre');
-        const contactPlaceMax = document.querySelector('#contact-placeMax')
+        const contactPlace = document.querySelector('#contact-place');
 
         contactAtelier.value = atelier._id;
-
         contactTitre.value = atelier.titre;
         contactPlaceMax.value = atelier.nbrDispo;
+        contactPlace.value = atelier.place;
+
+        console.log(contactPlace.value);
     },
 });
 
 // Test
 
-Template.atelier.onCreated(function decrementation() {
-    this.counter = new ReactiveVar(0);
-});
-
-Template.atelier.helpers({
-    counter() {
-        return Template.instance().counter.get();
-    },
-});
-
-Template.atelier.events({
-    'click .btn-clicker'(event, instance) {
-        const target = event.target;
-
-        console.log("cilbe : " + target);
-
-        instance.counter.set(instance.counter.get() + 1);
-
-        const counter = instance.counter.get();
-
-        console.log("conteur ctuelle : " + counter);
-    },
-});
+//Template.atelier.onCreated(function decrementation() {
+//    this.counter = new ReactiveVar(0);
+//});
+//
+//Template.atelier.helpers({
+//    counter() {
+//        return Template.instance().counter.get();
+//    },
+//});
+//
+//Template.atelier.events({
+//    'click .btn-clicker'(event, instance) {
+//        const target = event.target;
+//
+//        console.log("cilbe : " + target);
+//
+//        instance.counter.set(instance.counter.get() + 1);
+//
+//        const counter = instance.counter.get();
+//
+//        console.log("conteur ctuelle : " + counter);
+//    },
+//});
