@@ -1,7 +1,9 @@
 import { Template } from 'meteor/templating'
 import { Collection } from '../api/Collection.js'
+import { Reservation } from '../api/Collection.js'
  
 import './formulaire.html'
+import './reservation.html'
 
 Template.formulaire.events({
     'submit .nouvelle-atelier'(event) {
@@ -20,8 +22,6 @@ Template.formulaire.events({
         target.place.value = 0;
         const place = target.place.value;
 
-        console.log(place);
-
         Collection.insert ({
             titre,
             description,
@@ -36,6 +36,14 @@ Template.formulaire.events({
             owner: Meteor.userId(),
             username: Meteor.user().username,
         });
+
+        //Reservation.insert ({
+        //    titre,
+        //    date,
+        //    horaire,
+        //    duree,
+        //    createdAt: new Date(),
+        //});
 
         target.titre.value = '';
         target.description.value = '';

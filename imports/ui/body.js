@@ -75,51 +75,45 @@ Template.body.events({
         $('#Modal').modal('hide')
     },
 
-    'submit .reservation'(event) {
-        event.preventDefault();
+'submit .reservation'(event) {
+    event.preventDefault();
 
-        const target = event.target;
+    const target = event.target;
 
-        const Titre = target.contactTitre.value;
-        const ID = target.contactDeId.value;
+    const ID = target.contactDeId.value;
+    let Place = target.contactPlace.value;
 
-        const Nom = target.contactNom.value;
-        const Prenom = target.contactPrenom.value;
-        const NumTel = target.contactNumTel.value;
-        const Mail = target.contactMail.value;
+    Place++;
 
-        let CurrentNbr;
-        let CurrentMax = target.contactPlaceMax.value;
+    const Nom = target.contactNom.value;
+    const Prenom = target.contactPrenom.value;
+    const NumTel = target.contactNumTel.value;
+    const Mail = target.contactMail.value;
 
-        console.log(CurrentMax);
+    Reservation.insert({
+        Nom,
+        Prenom,
+        NumTel,
+        Mail,
+        createdAt: new Date(),
+    });
 
-        CurrentNbr = CurrentNbr + 1;
+    Collection.update(ID, {
+        $set: {
+            place: Place,
+        },
+    });
 
-        console.log(CurrentNbr);
+    target.contactTitre.value ='';
+    target.contactPlace.value = '';
+    target.contactDeId.value = '';
+    target.contactNom.value = '';
+    target.contactPrenom.value = '';
+    target.contactNumTel.value = '';
+    target.contactMail.value = '';
 
-        Reservation.insert ({
-            Titre,
-            Nom,
-            Prenom,
-            NumTel,
-            Mail,
-            createdAt: new Date(),
-        });
-
-        Collection.update(ID, {
-            $set: {
-                nbrMax: CurrentNbr,
-            },
-        });
-
-        target.contactTitre.value ='';
-        target.contactPlace.value = '';
-        target.contactDeId.value = '';
-        target.contactNom.value = '';
-        target.contactPrenom.value = '';
-        target.contactNumTel.value = '';
-        target.contactMail.value = '';
-    },
+    $('#contactModal').modal('hide')
+},
 
     'click .deleteInscription'() {
         Reservation.remove(this._id);

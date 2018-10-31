@@ -27,6 +27,9 @@
         <hr>
         <div class="card-body card-nbrDispo">
             <p class="card-text text-center">  place  reserver : {{place}} / {{nbrDispo}}</p>
+            {{#each Places}}
+                {{> reservation}}
+            {{/each}}
         </div>
         <div class="card-footer text-center">
             <div class="row">

@@ -1,4 +1,5 @@
 import './atelier.html'
+import './reservation.html'
 import { Template } from 'meteor/templating';
 import { Collection } from '../api/Collection.js';
 import { Reservation } from '../api/Collection.js';
@@ -53,7 +54,7 @@ Template.atelier.events({
 
     'click .btn-contact'(event) {
         const target = event.target;
-
+        
         const idAtelier = target.getAttribute("data-id");
         const atelier = Collection.findOne({ _id: idAtelier });
 
@@ -63,11 +64,9 @@ Template.atelier.events({
 
         contactAtelier.value = atelier._id;
         contactTitre.value = atelier.titre;
-        contactPlaceMax.value = atelier.nbrDispo;
         contactPlace.value = atelier.place;
-
-        console.log(contactPlace.value);
     },
+    
 });
 
 // Test
