@@ -1,6 +1,7 @@
 import { Template } from 'meteor/templating'
 import { Collection } from '../api/Collection.js'
 import { Reservation } from '../api/Collection.js'
+import { Meteor } from 'meteor/meteor'
  
 import './formulaire.html'
 import './reservation.html'
@@ -22,7 +23,7 @@ Template.formulaire.events({
         target.place.value = 0;
         const place = target.place.value;
 
-        Collection.insert ({
+        Meteor.call('Ateliers.insert',
             titre,
             description,
             date,
@@ -31,11 +32,7 @@ Template.formulaire.events({
             prix,
             image,
             nbrDispo,
-            place,
-            createdAt: new Date(),
-            owner: Meteor.userId(),
-            username: Meteor.user().username,
-        });
+            place);
 
         //Reservation.insert ({
         //    titre,

@@ -9,6 +9,7 @@ import { Template } from 'meteor/templating';
 import { Collection } from '../api/Collection.js';
 import { Reservation } from '../api/Collection.js';
 import { ReactiveVar } from 'meteor/reactive-var';
+import { Meteor } from 'meteor/meteor';
 
 
 
@@ -59,18 +60,17 @@ Template.body.events({
 
         const ModalId = target.edtId.value;
 
-        Collection.update(ModalId, {
-            $set: {
-                titre: ModalEdtTitre,
-                description: ModalEdtDescription,
-                date: ModalEdtDate,
-                horaire: ModalEdtHoraire,
-                duree: ModalEdtDuree,
-                prix: ModalEdtPrix,
-                image: ModalEdtImage,
-                nbrDispo: ModalEdtNbrDispo,
-            },
-        });
+        Meteor.call('Ateliers.edit',
+            ModalId,
+            ModalEdtTitre,
+            ModalEdtDescription,
+            ModalEdtDate,
+            ModalEdtHoraire,
+            ModalEdtDuree,
+            ModalEdtPrix,
+            ModalEdtImage,
+            ModalEdtNbrDispo
+            );
 
         $('#Modal').modal('hide')
     },

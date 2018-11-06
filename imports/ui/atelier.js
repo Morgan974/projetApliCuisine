@@ -3,16 +3,15 @@ import './reservation.html'
 import { Template } from 'meteor/templating';
 import { Collection } from '../api/Collection.js';
 import { Reservation } from '../api/Collection.js';
+import { Meteor } from 'meteor/meteor'
 
 Template.atelier.events({
     'click .toggle-checked'() {
-        Collection.update(this._id, {
-            $set: { checked: !this.checked },
-        });
+        Meteor.call('Ateliers.setChecked', this._id, !this.checked);
     },
 
     'click .delete'() {
-        Collection.remove(this._id);
+        Meteor.call('Ateliers.remove', this._id);
     },
 
     /*
