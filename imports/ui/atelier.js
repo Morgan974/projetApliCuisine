@@ -7,6 +7,7 @@ import { Meteor } from 'meteor/meteor'
 
 Template.atelier.events({
     'click .toggle-checked'() {
+        const checkID = this._id;
         Meteor.call('Ateliers.setChecked', this._id, !this.checked);
     },
 

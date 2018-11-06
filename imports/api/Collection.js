@@ -47,17 +47,19 @@ Meteor.methods({
         Collection.remove(taskId);
     },
     'Ateliers.setChecked'(
-        taskId,
+        checkId,
         setChecked) {
 
-        check(taskId, String);
+        check(checkId, String);
         check(setChecked, Boolean);
 
-        Collection.update(taskId, {
-             $set: { 
-                 checked: !this.checked 
-            },
-        });
+        Collection.update(checkId, { $set: { checked: setChecked } });
+
+    //    Collection.update(taskId, {
+    //         $set: { 
+    //             checked: !this.checked 
+    //        },
+    //    });
     },
     'Ateliers.edit'(
         ModalId,
