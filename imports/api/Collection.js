@@ -88,5 +88,33 @@ Meteor.methods({
             },
         });
     },
+    'Reservation.insert' (
+        ID,
+        Nom,
+        Prenom,
+        NumTel,
+        Mail,
+        Place) {
+
+        Reservation.insert({
+            Nom,
+            Prenom,
+            NumTel,
+            Mail,
+            createdAt: new Date()
+        });
+
+        Collection.update(ID, {
+            $set: {
+                place: Place,
+            },
+        });
+    },
+    'Reservation.remove'(taskId) {
+
+        check(taskId, String);
+
+        Reservation.remove(taskId);
+    },
 });
 

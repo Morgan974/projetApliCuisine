@@ -90,19 +90,14 @@ Template.body.events({
     const NumTel = target.contactNumTel.value;
     const Mail = target.contactMail.value;
 
-    Reservation.insert({
+    Meteor.call('Reservation.insert',
+        ID,
         Nom,
         Prenom,
         NumTel,
         Mail,
-        createdAt: new Date(),
-    });
-
-    Collection.update(ID, {
-        $set: {
-            place: Place,
-        },
-    });
+        Place,
+    );
 
     target.contactTitre.value ='';
     target.contactPlace.value = '';
@@ -116,7 +111,7 @@ Template.body.events({
 },
 
     'click .deleteInscription'() {
-        Reservation.remove(this._id);
+        Meteor.call('Reservation.remove', this._id);
     },
 
     
