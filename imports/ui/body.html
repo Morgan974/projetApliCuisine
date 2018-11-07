@@ -4,13 +4,14 @@
     <div class="zone container">
         <div class="row">
             <div class="col">
+                <!-- carte 1 -->
                 <div class="card text-white bg-primary mb-3 text-center">
                     <div class="card-header">
-                        La réunion
+                        La Réunion et la cuisine
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">l'île intense</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title">Une culture métissée</h5>
+                        <p class="card-text">Issue d'un mélange de culture, la cuisine réunionnaise fusionne diverses cultures dans la conception et la présentation .</p>
                         <a href="#" class="btn btn-secondary text-white">En savoir plus</a>
                     </div>
                 </div>
@@ -18,11 +19,11 @@
             <div class="col">
                 <div class="card text-white bg-success mb-3 text-center">
                     <div class="card-header">
-                        La réunion
+                        Les legumes et fruits pays
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">l'île intense</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title">Les saveurs des tropiques</h5>
+                        <p class="card-text">Le doux climat tropical de la Réunion propose divers fruits et légumes aux saveurs intenses et pour certaines particulières.</p>
                         <a href="#" class="btn btn-secondary text-white">En savoir plus</a>
                     </div>
                 </div>
@@ -30,11 +31,11 @@
             <div class="col">
                 <div class="card text-white bg-danger mb-3 text-center">
                     <div class="card-header">
-                        La réunion
+                        le piment pays
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">l'île intense</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title">Ibride, mais pas que...</h5>
+                        <p class="card-text">Le piment pays vient du piment de Madagascar qui, au fil des années a connue quelques modifications génétiques naturelles.</p>
                         <a href="#" class="btn btn-secondary text-white">En savoir plus</a>
                     </div>
                 </div>
@@ -42,35 +43,37 @@
             <div class="col">
                 <div class="card bg-light mb-3 text-center">
                     <div class="card-header">
-                        La réunion
+                        Le rhum
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">l'île intense</h5>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                        <h5 class="card-title">Arrangé s'il vous plait !</h5>
+                        <p class="card-text">Bien connu des réunionnais, le rhum arrangé est un rhum où à macéré des fruits, des légumes, ou plus rarement des petits animaux comme le scorpion.</p>
                         <a href="#" class="btn btn-secondary text-white">En savoir plus</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <section id="lienAtelier">
         <div class="row">
             {{#if currentUser}}
-            <div class="col-md-3 bcgBlack">                
+            <div class="col-md-3 bcgBlack">
                 <div class="row">
                     <div class="container text-center">
                         {{> formulaire}}
                     </div>
-                </div>             
+                </div>
             </div>
             {{/if}}
             <div class="col bcgGreen">
                 <div class="main">
                     {{#each Ateliers}}
-                        {{> atelier}}
+                    {{> atelier}}
                     {{/each}}
                 </div>
             </div>
         </div>
+    </section>
         {{#if currentUser}}
         <div class="row reservationStyle">
             <div class="container">
@@ -93,7 +96,7 @@
                                 <li>Cours de cuisine en Atelier</li>
                                 <li>Cours de cuisine en ligne</li>
                                 <li>Stage</li>
-                                <li>Nos atelier</li>
+                                <li>Nos ateliers</li>
                                 <li>Les chefs</li>
                             </ul>
                         </div>
@@ -101,7 +104,7 @@
                             <h4>Pour en savoir plus</h4>
                             <ul>
                                 <li>Le vin</li>
-                                <li>Les entrée</li>
+                                <li>Les entrées</li>
                                 <li>Le plat principal</li>
                                 <li>Les desserts</li>
                                 <li>le p'tit rhum</li>
@@ -125,7 +128,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="ModalLabel">Edition de l'Ateliers</h5>
+                        <h5 class="modal-title" id="ModalLabel">Edition de l'Atelier</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
