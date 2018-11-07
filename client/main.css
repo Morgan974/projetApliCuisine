@@ -140,3 +140,24 @@ footer h4 {
   padding-right: 10px;
   padding-left: 10px;
 }
+
+.styleimg {
+  width: 75px;
+}
+
+h1 {
+  font-family: 'Roboto', sans-serif;
+}
+h2 {
+  font-family: 'Roboto', sans-serif;
+}
+h3 {
+  font-family: 'Roboto', sans-serif;
+}
+h4 {
+  font-family: 'Roboto', sans-serif;
+}
+
+p, li, span {
+  font-family: Verdana, Geneva, sans-serif;
+}
