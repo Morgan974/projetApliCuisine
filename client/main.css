@@ -10,6 +10,7 @@
 .bcgGreen {
   background-color: #f3671f;
   padding-top: 25px;
+  padding-bottom: 25px;
 }
 .nouvelle-atelier {
   display: flex;
@@ -111,4 +112,27 @@ nav img {
 }
 .carousel-control-next-icon{
   color: black;
+}
+
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  background-color: black;
+  color: white;
+  padding-top: 20px;
+  font-size: 10px;
+}
+
+footer h4 {
+  font-size: 14px;
+}
+
+.reservationStyle {
+  background-color: #f3671f;
+  padding: 10px;
+}
+
+.login {
+  padding-right: 10px;
+  padding-left: 10px;
 }
